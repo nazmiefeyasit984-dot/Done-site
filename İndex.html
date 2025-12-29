@@ -1,0 +1,153 @@
+DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <title>Yapımcı: nazmş efe yasit 4/B yapım uygulaması: Sketware pro</title>
+</head>
+<body>
+  <h1>
+    Yapımcı:Nazmi efe yasit 4/B yapım uygulaması: Sketware pro
+  </h1>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uygulama İndirme ve Yorumlar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column; /* Kart ve yorumları alt alta dizmek için */
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .comment-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 { color: #333; font-size: 24px; }
+        h2 { color: #333; font-size: 18px; margin-top: 0; }
+        p { color: #666; margin-bottom: 2rem; }
+        .download-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s ease;
+            margin-bottom: 10px;
+        }
+        .download-btn:hover { background-color: #0056b3; }
+        
+        /* Yorum Formu Tasarımı */
+        textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            resize: none;
+        }
+        .comment-submit {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        #comments-display {
+            margin-top: 20px;
+            text-align: left;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+        .comment-item {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border-left: 4px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1006/1006155.png" alt="App Icon" width="80">
+        <h1>New Project APK</h1>
+        <p>Uygulamayı indirmek için aşağıdaki butona tıklayın.</p>
+        
+        <a href="https://www.mediafire.com/file/xbjsp13jvdcg0y3/NewProject.apk/file" class="download-btn" target="_blank">
+            ŞİMDİ İNDİR
+        </a>
+    </div>
+
+    <div class="comment-section">
+        <h2>Yorum Yap</h2>
+        <textarea id="comment-text" placeholder="Görüşlerinizi yazın..."></textarea>
+        <button class="comment-submit" onclick="addComment()">Yorum Gönder</button>
+
+        <div id="comments-display">
+            <strong>Yorumlar:</strong>
+            <div id="comment-list">
+                <p style="color:#999; font-size:12px;">Henüz yorum yapılmamış.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addComment() {
+            const textarea = document.getElementById('comment-text');
+            const commentList = document.getElementById('comment-list');
+            
+            if (textarea.value.trim() === "") {
+                alert("Lütfen bir yorum yazın!");
+                return;
+            }
+
+            // İlk yorumda "Henüz yorum yapılmamış" yazısını kaldır
+            if (commentList.innerHTML.includes("Henüz yorum yapılmamış")) {
+                commentList.innerHTML = "";
+            }
+
+            // Yeni yorum oluştur
+            const newComment = document.createElement('div');
+            newComment.className = 'comment-item';
+            newComment.innerText = textarea.value;
+
+            // Listeye ekle ve kutuyu temizle
+            commentList.prepend(newComment);
+            textarea.value = "";
+        }
+    </script>
+
+</body>
+</html>
